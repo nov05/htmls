@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<!--
+Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+
+You may not use this file except in compliance with the License. A copy
+of the License is located at
+
+http://aws.amazon.com/apache2.0/
+
+or in the "license" file accompanying this file. This file is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+either express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+-->
+
+<html lang="en">
+  <head>
+    <title>Amazon Bin Image Data Set</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="//aws.amazon.com/favicon.ico">
+    <link rel="stylesheet" href="//d3nwe3hmw5kgq8.cloudfront.net/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//d3nwe3hmw5kgq8.cloudfront.net/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="//d3nwe3hmw5kgq8.cloudfront.net/styles.css">
+  </head>
+
+    <!-- DEBUG: Enable this for red outline on all elements -->
+    <!-- <style media="screen" type="text/css"> * { outline: 1px red solid; } </style> -->
+
+  <body>
+    <div class="container">
+      <header>
+        <a href="http://aws.amazon.com/what-is-cloud-computing"><img src="https://d3nwe3hmw5kgq8.cloudfront.net/100px-AWS_Logo_Web-Black.png" alt="Powered by AWS Cloud Computing" class="pull-right"></a>
+        <h1>Amazon Bin Image Data Set</h1>
+        <hr>
+      </header>
+      <div>
+        <p><a href="http://aws.amazon.com/public-data-sets/amazon-bin-images/">Documentation for the Amazon Bin Image Data Set</a></p>
+        <!-- Insert copy here -->
+      </div>
+      <div class="row panel panel-body">
+        <h2>Data</h2>
+        <ul id="breadcrumb" class="breadcrumb pull-left">
+          <li class="active dropdown">
+            <a href="#">&lt;bucket&gt;</a>
+          </li>
+        </ul>
+        <div class="btn-group pull-right hide">
+          <div class="checkbox pull-left">
+            <!-- Folder/Bucket radio group -->
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-primary active" title="View all objects in folder">
+                <i class="fa fa-angle-double-up"></i><input type="radio" name="optionsdepth" value="folder" id="optionfolder" checked>&nbsp;Folder
+              </label>
+              <label class="btn btn-primary" title="View all objects in bucket">
+                <i class="fa fa-angle-double-down"></i><input type="radio" name="optionsdepth" value="bucket" id="optionbucket">&nbsp;Bucket
+              </label>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered table-hover table-striped" id="tb-s3objects">
+          <thead>
+            <tr>
+              <th>Object</th>
+              <th>Folder</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-s3objects"></tbody>
+        </table>
+      </div>
+      <footer>
+        <p><a href="http://aws.amazon.com/public-data-sets/">Amazon Web Services Public Data Sets</a></p>
+      </footer>
+    </div>  
+  </body>
+</html>
+
+<script src="//d3nwe3hmw5kgq8.cloudfront.net/jquery-2.1.1.min.js"></script>
+<script src="//d3nwe3hmw5kgq8.cloudfront.net/bootstrap.min.js"></script>
+<script src="//d3nwe3hmw5kgq8.cloudfront.net/bootbox.min.js"></script>
+<script src="//sdk.amazonaws.com/js/aws-sdk-2.0.13.min.js"></script>
+<script src="//d3nwe3hmw5kgq8.cloudfront.net/moment.min.js"></script>
+<script src="//d3nwe3hmw5kgq8.cloudfront.net/jquery.dataTables.min.js"></script>
+<script src="//d3nwe3hmw5kgq8.cloudfront.net/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="//awsopendata-assets.s3.amazonaws.com/aft-vbi-pds-s3explorer.js"></script>
